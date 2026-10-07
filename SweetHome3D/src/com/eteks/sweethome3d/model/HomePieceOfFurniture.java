@@ -107,11 +107,6 @@ public class HomePieceOfFurniture extends HomeObject implements PieceOfFurniture
           return HomePieceOfFurniture.compare(piece1.depth, piece2.depth);
         }
       });
-    SORTABLE_PROPERTY_COMPARATORS.put(SortableProperty.VOLUME, new Comparator<HomePieceOfFurniture>() {
-      public int compare(HomePieceOfFurniture piece1, HomePieceOfFurniture piece2) {
-        return HomePieceOfFurniture.compare(piece1.getVolume(), piece2.getVolume());
-      }
-    });
     SORTABLE_PROPERTY_COMPARATORS.put(SortableProperty.MOVABLE, new Comparator<HomePieceOfFurniture>() {
         public int compare(HomePieceOfFurniture piece1, HomePieceOfFurniture piece2) {
           return HomePieceOfFurniture.compare(piece1.movable, piece2.movable);
@@ -591,10 +586,6 @@ public class HomePieceOfFurniture extends HomeObject implements PieceOfFurniture
     } else {
       throw new IllegalStateException("Piece isn't resizable");
     }
-  }
-
-  public float getVolume() {
-    return this.width * this.height * this.depth;
   }
 
   /**
